@@ -1,6 +1,6 @@
 # cargo-ryu
 
-A minimal script to enable Cargo support in the [Ryugod](https://www.ryugod.com) online Rust environment.
+A minimal script to enable Cargo support in the [Ryugod](https://www.ryugod.com/pages/ide/rust) online Rust environment.
 
 ## Steps
 
