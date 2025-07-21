@@ -1,23 +1,27 @@
-# In www.ryugod.com highlight this entire script and then select "Send to Terminal"
+# In www.ryugod.com **highlight this entire script and then select "Send to Terminal**"
 # You'll now be able to cargo add third party dependencies via cargo in the terminal
 #!/bin/bash
 
 # Create Cargo.toml file
-cat > Cargo.toml <<EOF
-[package]
-name = "main"
-version = "0.1.0"
-edition = "2021"
+cargo init
+head Cargo.toml
 
-[dependencies]
-EOF
-
-# Create boilerplate Rust funciton
-mkdir src
+# Move ryugod's main.rs to correct place
+if [ -e main.rs ]; then
+  mv main.rs src/main.rs
+fi
 cd src
 
-cat > main.rs <<EOF
+# Ensure that cargo run works by replacing template
+cat > main.rs << EOF
 fn main() {
-  println!("Hello World!");
+    println!("Shell command works!");
 }
 EOF
+cargo run
+
+# Return to original directory
+cd ..
+ls -l
+ls
+echo Ready to run third-party crates!
